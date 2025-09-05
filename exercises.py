@@ -14,6 +14,8 @@ def calculate_area_triangle(base, height):
 print('Exercise 1:', calculate_area_triangle(10, 5))
 print('Exercise 1:', calculate_area_triangle(7, 3))
 
+
+
 # Exercise 2: Calculate Simple Interest
 #
 # Write a function named `simple_interest` that takes principal, rate of interest (as a percentage), and time (years).
@@ -31,6 +33,8 @@ def simple_interest(principal, rate, time):
 print('Exercise 2:', simple_interest(1000, 5, 2))
 print('Exercise 2:', simple_interest(1500, 3.5, 5))
 
+
+
 # Exercise 3: Apply a Discount
 #
 # Write a function named `apply_discount` that takes a product's price and a discount percentage (from 0 to 100).
@@ -45,9 +49,10 @@ def apply_discount(price, discount):
     new_price = price - (discount/100 * price)
     return new_price
 
-
 print('Exercise 3:', apply_discount(100, 25))
 print('Exercise 3:', apply_discount(80, 10))
+
+
 
 # Exercise 4: Convert Temperature
 #
@@ -60,21 +65,23 @@ print('Exercise 3:', apply_discount(80, 10))
 # Examples:
 # convert_temperature(0, 'C') should return 32.0.
 # convert_temperature(32, 'F') should return 0.0.
-#
+
 # Define the function and then call it below.
-# def convert_temperature(temperature, unit):
+def convert_temperature(temperature, unit):
+    
+    normalized_temp = float(temperature)
 
-#     other_temp =
-#         if unit == 'C':
-#             (temperature * 9/5) + 32
-#         elif unit == 'F':
-#             (temperature - 32) * 5/9
-#     return other_temp
+    if unit == 'C':
+       f_temp = (normalized_temp * 9/5) + 32
+       return f_temp
+    elif unit == 'F':
+        c_temp = (normalized_temp - 32) * 5/9
+        return c_temp
+
+print('Exercise 4: Convert 0°C to Fahrenheit:', convert_temperature(0, 'C'))
+print('Exercise 4: Convert 32°F to Celsius:', convert_temperature(32, 'F'))
 
 
-# print('Exercise 4: Convert 0°C to Fahrenheit:', convert_temperature(0, 'C'))
-# print('Exercise 4: Convert 32°F to Celsius:', convert_temperature(32, 'F'))
-#?
 
 # Exercise 5: Sum to N
 #
@@ -92,6 +99,8 @@ def sum_to(n):
 print('Exercise 5:', sum_to(6))
 print('Exercise 5:', sum_to(10))
 
+
+
 # Exercise 6: Find the Largest Number
 #
 # Write a function named `largest` that takes three integers as arguments and returns the largest of them.
@@ -99,17 +108,20 @@ print('Exercise 5:', sum_to(10))
 # Examples:
 # largest(1, 2, 3) should return 3.
 # largest(10, 4, 2) should return 10.
-#
+
 # Define your function and test it with different inputs.
-# def largest(x, y, z):
-#     if x > y >= z return x
-#     elif y > x >= z return y
-#     elif z > x >= y return z
+def largest(x, y, z):
+    if x > y and y >= z:
+        return x
+    elif y > x and x >= z:
+        return y
+    else:
+       return z
+
+print('Exercise 6:', largest(1, 2, 3))
+print('Exercise 6:', largest(10, 4, 2))
 
 
-# print('Exercise 6:', largest(1, 2, 3))
-# print('Exercise 6:', largest(10, 4, 2))
-# #?
 
 # Exercise 7: Calculate a Tip
 #
@@ -126,6 +138,8 @@ def calculate_tip(bill, tip):
 
 print('Exercise 7:', calculate_tip(50, 20))
 
+
+
 # Exercise 8: Calculate Product of Numbers
 #
 # Write a function named `product` that takes an arbitrary number of numbers, multiplies them, and returns the product.
@@ -136,13 +150,16 @@ print('Exercise 7:', calculate_tip(50, 20))
 # product(2, 5, 5) should return 50.
 #
 # Define the function and call it with different sets of numbers to test.
-# def product(*args):
-#     for arg in args:
-#        arg * arg
+def product(*args):
+    start = 1
+    for arg in args:
+       start = start * arg
+    return start
     
-# print('Exercise 8:', product(-1, 4))
-# print('Exercise 8:', product(2, 5, 5))
-#?
+print('Exercise 8:', product(-1, 4))
+print('Exercise 8:', product(2, 5, 5))
+
+
 
 # Exercise 9: Basic Calculator
 #
@@ -156,18 +173,32 @@ print('Exercise 7:', calculate_tip(50, 20))
 # basic_calculator(10, 5, 'add') should return 15.
 # basic_calculator(10, 5, 'multiply') should return 50.
 # basic_calculator(10, 5, 'divide') should return 2.
-#
-# Define the function and then call it below.
-def basic_calculator(first_par, second_par, **kwargs):
-    total = first_par kwargs second_par
 
-    return total
+# Define the function and then call it below.
+def basic_calculator(first_par, second_par, operation):
+    if operation == "subtract":
+        subtracts = first_par - second_par
+        return subtracts
+    elif operation == "add":
+        adds = first_par + second_par
+        return adds
+
+    elif operation == "multiply":
+        multiplies = first_par * second_par
+        return multiplies
+
+    elif operation == "divide":
+        divides = first_par / second_par
+        return divides
+
+    else:
+        return ('Invalid')
 
 print('Exercise 9 Result:', basic_calculator(10, 5, "subtract"))
 print('Exercise 9 Result:', basic_calculator(10, 5, "add"))
 print('Exercise 9 Result:', basic_calculator(10, 5, "multiply"))
 print('Exercise 9 Result:', basic_calculator(10, 5, "divide"))
-#?
+#???????
 
 
-#python3 exercises.py
+# python3 exercises.py
